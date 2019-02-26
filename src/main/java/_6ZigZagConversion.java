@@ -14,6 +14,20 @@ public class _6ZigZagConversion {
         char[] input = s.toCharArray();
         char[] output = new char[input.length];
         int L  = input.length;
+
+        if(numRows == 1){
+            return s;
+        }else if(numRows == 2){
+            int k;
+            for(k = 0; 2*k+1 < L; k++){
+                output[k] = input[2*k];
+                output[k+ (L+1)/2] = input[2*k+1];
+            }
+            if(2*k < L){
+                output[k] = input[2*k];
+            }
+            return new String(output);
+        }
         int M = L / (2*numRows - 2);
         int N = L % (2*numRows - 2);
 
@@ -111,6 +125,6 @@ public class _6ZigZagConversion {
     public static void main(String[] args){
         _6ZigZagConversion test = new _6ZigZagConversion();
         System.out.println(test.convert("PAYPALISHIRING",3));
-        System.out.println(test.convert("PAYPALISHIRING",4));
+        System.out.println(test.convert("ABCDEFGH",2));
     }
 }
