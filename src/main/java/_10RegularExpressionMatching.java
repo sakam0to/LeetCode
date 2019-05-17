@@ -172,7 +172,7 @@ public class _10RegularExpressionMatching {
         }
     }
 
-    //在input内，从start位置开始(不含start)，找到下一个匹配pattern的位置并返回
+    //在input内，从start位置开始(不含start)，找到下一个匹配pattern的位置并返回,非贪婪量词模式，总是寻找最短匹配
     int findNextMatch(char[] input, int start, char pattern, int nextcount){
         if(nextcount == -1)
             return start;

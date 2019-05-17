@@ -5,7 +5,7 @@ import java.util.List;
  * @author zhujingjie
  * @project LeetCode
  * @description 9 判断一个数字是否是回文，不用转字符串的方法
- * @date 2019-03-06 11:27
+ * @date 2019-05-09 16:27
  */
 public class _9PalindromeNumber {
     //用除10取余的方法依次获取每位数，存入一个列表中，然后在比较对应位置是否相等
