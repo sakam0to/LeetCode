@@ -1,4 +1,3 @@
-import com.sun.tools.javac.util.ArrayUtils;
 
 /**
  * @author zhujingjie
