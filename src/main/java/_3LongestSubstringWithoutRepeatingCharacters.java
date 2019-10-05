@@ -52,4 +52,29 @@ public class _3LongestSubstringWithoutRepeatingCharacters {
         _3LongestSubstringWithoutRepeatingCharacters test = new _3LongestSubstringWithoutRepeatingCharacters();
         System.out.println(test.lengthOfLongestSubstring("aabaab!bb"));
     }
+
+    public int betterLengthOfLongestSubstring(String s) {
+        //简化数据结构开销,String改成char[],使用自己实现的indexOf()算法，性能更好
+        char[] input = s.toCharArray();
+        char[] pattern = new char[input.length];
+        int startPointer = 0;
+        int maxLength = 0;
+
+        for(int i = 0; i < input.length; i++ ){
+            pattern[i] = input[i];
+
+            for(int j = startPointer; j < i; j++){
+                if(pattern[j] == pattern[i]){
+                    startPointer = j + 1;
+                    break;
+                }
+            }
+
+            int patternLength = i - startPointer + 1;
+            if(patternLength > maxLength){
+                maxLength = patternLength;
+            }
+        }
+        return maxLength;
+    }
 }
