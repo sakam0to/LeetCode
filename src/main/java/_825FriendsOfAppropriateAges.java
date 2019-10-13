@@ -12,7 +12,7 @@ public class _825FriendsOfAppropriateAges {
 
      int[] age = new int[maxAge]; store number of persons of 0 ~ maxAge year's old
      for each age[i]:
-     request = age[i] * (age[ floor(0.5*age[i]+7+1) ] +...+age[i] - 1);  -1 = remove himself
+     request += age[i] * (age[ floor(0.5*age[i]+7+1) ] +...+age[i] - 1);  -1 = remove himself
      */
     public int numFriendRequests(int[] ages) {
         int maxAge = 0;
