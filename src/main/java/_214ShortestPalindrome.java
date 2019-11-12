@@ -1,5 +1,3 @@
-import com.sun.deploy.util.StringUtils;
-
 public class _214ShortestPalindrome {
     public static void main(String[] args){
         _214ShortestPalindrome test = new _214ShortestPalindrome();
