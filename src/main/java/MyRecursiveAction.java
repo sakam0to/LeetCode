@@ -7,7 +7,6 @@ import java.util.logging.Logger;
 public class MyRecursiveAction extends RecursiveAction {
     Logger logger = Logger.getLogger(Thread.currentThread().toString());
     final String myString;
-
     MyRecursiveAction(String input) {
         this.myString = input;
 
