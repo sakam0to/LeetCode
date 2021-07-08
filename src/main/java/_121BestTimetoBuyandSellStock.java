@@ -1,32 +1,16 @@
 public class _121BestTimetoBuyandSellStock {
-    public static void main(String[] args){
-        _121BestTimetoBuyandSellStock test = new _121BestTimetoBuyandSellStock();
-        int[] input = new int[]{};
-        System.out.println(test.maxProfit(input));
-    }
     public int maxProfit(int[] prices) {
-        if(prices.length < 1){
-            return 0;
-        }
-        int minCost = prices[0];
-        int[] profits = new int[prices.length];
-        for(int i = 0; i < profits.length; i++){
-            profits[i] = Math.max(0, prices[i] - minCost);
-            if(prices[i] < minCost){
-                minCost = prices[i];
+        int buy = prices[0];
+        int maxProfit = 0;
+
+        for(int i = 1; i < prices.length; i++){
+            if(prices[i] < buy){
+                buy = prices[i];
+            } else{
+                if(prices[i] - buy > maxProfit)
+                    maxProfit = prices[i] - buy;
             }
         }
-
-        return max(profits);
-    }
-
-    private int max(int[] profits) {
-        int max = profits[0];
-        for(int i : profits){
-            if(i > max){
-                max = i;
-            }
-        }
-        return max;
+        return maxProfit;
     }
 }
